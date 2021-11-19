@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int* vetor(int qtd){
+
+    int *novoVetor;
+    int i;
+
+    srand(time(NULL));
+
+    novoVetor = (int*)malloc(qtd * sizeof(int));
+
+    for(i = 0; i < qtd; i++){
+        novoVetor[i] = rand() % 100;
+    }
+
+    return novoVetor;
+}
+
+int main(){
+
+    int *vet;
+    int quant, i;
+
+    printf("\nDigite a Quantidade Numeros do Vetor: ");
+    scanf("%d", &quant);
+
+    vet = vetor(quant);
+
+    printf("\n");
+    for(i = 0; i < quant; i++){
+        printf("%d ", vet[i]);
+    }
+    printf("\n");
+
+
+
+    return 0;
+}
