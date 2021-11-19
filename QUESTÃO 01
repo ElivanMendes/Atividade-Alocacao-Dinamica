@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+
+    int *idade;
+    int quant_p;
+    int maior_i = 0, menor_i = 0;
+
+    printf("\nQuantas Pessoas Deseja Cadastra a Idade: ");
+    scanf("%d", &quant_p);
+
+    idade = malloc(quant_p*sizeof(float));
+
+    for(int i = 0; i < quant_p; i++){
+        printf("\nIdade da Pessoa %d: ", i);
+        scanf("%d", &idade[i]);
+    }
+
+    printf("\n\n-_-_IDADES_-_-\n");
+    for(int i = 0; i < quant_p; i++){
+        printf("\nPessoa %d: %d", i, idade[i]);
+    }
+
+    for(int i = 0; i < quant_p; i++){
+        if(idade[i] >= 18){
+            maior_i++;
+        }
+    }
+
+    for(int i = 0; i < quant_p; i++){
+        if(idade[i] < 18){
+            menor_i++;
+        }
+    }
+
+    printf("\n\nPessoas Maiores de Idade: %d\n", maior_i);
+    printf("\nPessoas Menores de Idade: %d\n\n", menor_i);
+
+
+
+    free(idade);
+
+
+
+    return 0;
+}
