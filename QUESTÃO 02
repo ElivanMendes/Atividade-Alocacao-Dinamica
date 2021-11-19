@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct{
+
+    float nota_01, nota_02, nota_03;
+
+}Notas;
+
+int main(){
+
+    Notas *notas;
+
+    int quant_A;
+
+    notas = malloc(quant_A*sizeof(Notas));
+
+    printf("\nDIGITE A QUANTIDADE DE ALUNOS QUE DESEJA CADASTRA AS NOTAS: ");
+    scanf("%d", &quant_A);
+
+    for(int i = 0; i < quant_A; i++){
+        printf("\nDIGITE AS NOTAS DO ALUNO %d\n", i);
+
+        printf("\nDigite a Nota 1: ");
+        scanf("%f", &notas->nota_01);
+
+        printf("\nDigite a Nota 2: ");
+        scanf("%f", &notas->nota_02);
+
+        printf("\nDigite a nota 3: ");
+        scanf("%f", &notas->nota_03);
+
+        printf("\n\n\tMEDIA: %.2f\n", (notas->nota_01 + notas->nota_02 + notas->nota_03) / 3);
+
+        if((notas->nota_01 + notas->nota_02 + notas->nota_03) / 3 >= 7){
+            printf("\n\tALUNO APROVADO!!!\n\n");
+        }
+        else{
+            printf("\n\tALUNO REPROVADO!!!\n\n");
+        }
+    }
+
+
+
+    free(notas);
+
+
+
+    return 0;
+}
